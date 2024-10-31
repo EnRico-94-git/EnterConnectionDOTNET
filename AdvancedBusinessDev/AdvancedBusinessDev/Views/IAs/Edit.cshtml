@@ -1,0 +1,59 @@
+﻿@model AdvancedBusinessDev.Models.IA
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>IA</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdIa" />
+            <div class="form-group">
+                <label asp-for="HistRecomendacao" class="control-label"></label>
+                <input asp-for="HistRecomendacao" class="form-control" />
+                <span asp-validation-for="HistRecomendacao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tecnologias" class="control-label"></label>
+                <input asp-for="Tecnologias" class="form-control" />
+                <span asp-validation-for="Tecnologias" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BancoDados" class="control-label"></label>
+                <input asp-for="BancoDados" class="form-control" />
+                <span asp-validation-for="BancoDados" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dados" class="control-label"></label>
+                <input asp-for="Dados" class="form-control" />
+                <span asp-validation-for="Dados" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ParceiroIdParceiro" class="control-label"></label>
+                <select asp-for="ParceiroIdParceiro" class="form-control" asp-items="ViewBag.ParceiroIdParceiro"></select>
+                <span asp-validation-for="ParceiroIdParceiro" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmpresaEmpresaId" class="control-label"></label>
+                <select asp-for="EmpresaEmpresaId" class="form-control" asp-items="ViewBag.EmpresaEmpresaId"></select>
+                <span asp-validation-for="EmpresaEmpresaId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
